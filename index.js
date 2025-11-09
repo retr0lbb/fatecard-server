@@ -1,11 +1,15 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require("cors")
 const { PrismaClient } = require('@prisma/client');
 
 // Importa a correção para o BigInt
 const jsonBigint = require('json-bigint-patch');
 const app = express();
 app.use(express.json());
+app.use(cors({
+  origin: "*"
+}))
 
 // Aplica a correção para o BigInt
 app.set('json replacer', jsonBigint.replacer);

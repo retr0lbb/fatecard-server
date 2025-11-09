@@ -1,0 +1,9 @@
+POST http://localhost:3000/palestras
+Content-Type: application/json
+
+{
+    "titulo": "Destrave Sua mente: Aprende POO de forma dinamica", 
+    "descricao": "Use sua imaginacao e aprenda java por favor", 
+    "horario_inicio": "2025-11-10T19:50:00.000Z", 
+    "horario_fim": "2025-11-10T22:50:00.000Z"
+    }
