@@ -291,12 +291,15 @@ app.post('/checkin', async (req, res) => {
 });
 
 // Rota para ver PRESENTES (quem fez check-in)
+// Rota para ver PRESENTES (quem fez check-in)
 app.get('/palestras/:id/presentes', async (req, res) => {
   const { id } = req.params;
   const checkins = await prisma.checkin.findMany({
     where: { palestra_id: id },
     include: {
-      aluno: { select: { ra: true, Nome: true, Curso: true } }
+      aluno: {
+        select: { ra: true, Nome: true, Curso: true }
+      }
     }
   });
 
